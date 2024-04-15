@@ -35,7 +35,7 @@ public class Hw4
 
         // TODO: your code goes here
         Cities.ReadZipCodes.GetCities();
-        
+        Cities.CommonCityNames.Solution();
 
         
 

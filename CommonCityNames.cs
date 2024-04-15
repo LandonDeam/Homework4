@@ -45,13 +45,20 @@ namespace Cities
 
             try
             {
-                
+                StreamReader sr = new StreamReader("states.txt");
+                string state1 = sr.ReadLine();
+                string state2 = sr.ReadLine();
+                sr.Close();
                 StreamWriter sw = new StreamWriter(File);
-                foreach (var city in getCommon(state1, state2).Sort())
+                List<string> list = getCommon(state1, state2);
+                list.Sort();
+                foreach (var city in list)
                 {
                     sw.WriteLine(city);
                 }
+                sw.Close();
             }
+            catch (Exception) {}
         }
     }
 }
