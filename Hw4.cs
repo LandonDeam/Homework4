@@ -37,6 +37,7 @@ public class Hw4
         Cities.ReadZipCodes.GetCities();
         Cities.CommonCityNames.Solution();
         Cities.LatLon.Solution();
+        Cities.CityStates.Solution();
 
         
 

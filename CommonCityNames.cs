@@ -6,7 +6,7 @@ namespace Cities
 {
     public class CommonCityNames
     {
-        private static Dictionary<string, List<string>> cities = new Dictionary<string, List<string>>();
+        public static Dictionary<string, List<string>> cities = new Dictionary<string, List<string>>();
 
         public static void add(string city, string state) {
             if (cities.ContainsKey(city) && !cities[city].Contains(state))

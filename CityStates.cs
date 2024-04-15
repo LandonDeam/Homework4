@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace Cities
 {
@@ -14,11 +15,21 @@ namespace Cities
                 StreamReader sr = new StreamReader("cities.txt");
                 while ((line = sr.ReadLine()) != null)
                 {
-                    cities.Add(line);
+                    cities.Add(line.ToUpper());
                 }
                 sr.Close();
+                StreamWriter sw = new StreamWriter(File);
+                foreach (string city in cities)
+                {
+                    List<string> states = CommonCityNames.cities[city];
+                    states.Sort();
+                    sw.WriteLine(string.Join(" ", states));
+                }
+                sw.Close();
             }
-            catch (Exception) {}
+            catch (Exception e) {
+                Console.WriteLine(e.Message);
+            }
         }
     }
 }
