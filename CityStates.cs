@@ -9,7 +9,14 @@ namespace Cities
         {
             try
             {
-                
+                List<string> cities = new List<string>();
+                string line;
+                StreamReader sr = new StreamReader("cities.txt");
+                while ((line = sr.ReadLine()) != null)
+                {
+                    cities.Add(line);
+                }
+                sr.Close();
             }
             catch (Exception) {}
         }
