@@ -35,10 +35,7 @@ public class Hw4
 
         // TODO: your code goes here
         Cities.ReadZipCodes.GetCities();
-        foreach (var city in Cities.ReadZipCodes.cities)
-        {
-            Cities.CommonCity.add(city.city, city.State);
-        }
+        
 
         
 

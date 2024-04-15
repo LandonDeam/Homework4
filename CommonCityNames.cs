@@ -1,9 +1,10 @@
 using System.Collections.Generic;
 using System;
+using System.IO;
 
 namespace Cities
 {
-    public class CommonCity
+    public class CommonCityNames
     {
         private static Dictionary<string, List<string>> cities = new Dictionary<string, List<string>>();
 
@@ -33,6 +34,24 @@ namespace Cities
                 }
             }
             return list;
+        }
+
+        public static void Solution(string File = "CommonCityNames.txt")
+        {
+            foreach (var city in ReadZipCodes.cities)
+            {
+                add(city.city, city.State);
+            }
+
+            try
+            {
+                
+                StreamWriter sw = new StreamWriter(File);
+                foreach (var city in getCommon(state1, state2).Sort())
+                {
+                    sw.WriteLine(city);
+                }
+            }
         }
     }
 }

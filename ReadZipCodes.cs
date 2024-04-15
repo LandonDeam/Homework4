@@ -20,6 +20,7 @@ namespace Cities {
 
                 StreamReader sr = new StreamReader(File);
                 WholeFile = sr.ReadToEnd();
+                sr.Close();
             } catch (Exception e) {
                 Console.WriteLine(e.Message);
             }
@@ -38,6 +39,7 @@ namespace Cities {
                     string[] vars = line.Split('\t');
                     cities.Add(new City(
                         vars[0],
+                        vars[1],
                         vars[3],
                         vars[4],
                         vars[6],
