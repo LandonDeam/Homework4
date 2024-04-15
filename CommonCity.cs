@@ -8,8 +8,13 @@ namespace Cities
         private static Dictionary<string, List<string>> cities = new Dictionary<string, List<string>>();
 
         public static void add(string city, string state) {
-            if (cities[city] is not null && !cities[city].Contains(state)) 
+            if (cities.ContainsKey(city) && !cities[city].Contains(state))
             {
+                cities[city].Add(state);
+            } 
+            else if (!cities.ContainsKey(city))
+            {
+                cities[city] = new List<string>();
                 cities[city].Add(state);
             }
         }
@@ -19,7 +24,7 @@ namespace Cities
             List<string> list = new List<string>();
             foreach (string city in cities.Keys)
             {
-                if (cities[city] is not null &&
+                if (cities[city] != null &&
                     cities[city].Contains(state1) &&
                     cities[city].Contains(state2)
                     )
